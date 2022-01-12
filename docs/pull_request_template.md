@@ -1,0 +1,11 @@
+- [ ] New feature
+    - Changed:
+    - Issues created:  
+- [ ] Fixed issue
+    - Issue fixed:
+- [ ] Refactor
+    - Code refactored:
+- [ ] Tested
+    - How:
+
+- [ ] Future Steps:
