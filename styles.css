@@ -1,5 +1,7 @@
 
-
+* {
+  font-family: 'Open sans', sans-serif;
+}
 body {
   height: 100vh;
   width: 100vw;
@@ -15,6 +17,7 @@ header, footer {
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 main {
@@ -36,30 +39,21 @@ section {
 div {
   height: 150px;
   width: 150px;
+  cursor: crosshair;
 }
 
-.q1, .q2, .q3 {
+.q1, .q2, .q3, .q4, .q5, .q6  {
   border-bottom: solid 2px #4d0026;
 }
 
-.q1, .q4, .q7 {
+.q1, .q4, .q7, .q2, .q5, .q8 {
   border-right: solid 2px #4d0026;
 }
 
-.q2, .q5, .q8 {
-  border-right: solid 2px #4d0026;
-  border-left: solid 2px #4d0026;
-}
-
-.q3, .q6, .q9 {
+.q3, .q6, .q9, .q2, .q5, .q8 {
   border-left: solid 2px #4d0026
 }
 
-.q4, .q5, .q6 {
-  border-top: solid 2px #4d0026;
-  border-bottom: solid 2px #4d0026;
-}
-
-.q7, .q8, .q9 {
+.q4, .q5, .q6, .q7, .q8, .q9 {
   border-top: solid 2px #4d0026;
 }
