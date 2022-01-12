@@ -16,3 +16,50 @@ header, footer {
   display: flex;
   flex-direction: column;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  width: 460px;
+  height: 460px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+div {
+  height: 150px;
+  width: 150px;
+}
+
+.q1, .q2, .q3 {
+  border-bottom: solid 2px #4d0026;
+}
+
+.q1, .q4, .q7 {
+  border-right: solid 2px #4d0026;
+}
+
+.q2, .q5, .q8 {
+  border-right: solid 2px #4d0026;
+  border-left: solid 2px #4d0026;
+}
+
+.q3, .q6, .q9 {
+  border-left: solid 2px #4d0026
+}
+
+.q4, .q5, .q6 {
+  border-top: solid 2px #4d0026;
+  border-bottom: solid 2px #4d0026;
+}
+
+.q7, .q8, .q9 {
+  border-top: solid 2px #4d0026;
+}
