@@ -2,6 +2,7 @@ class Game {
   constructor() {
     this.player1 = new Player({name: 'Player 1', token: 'X'})
     this.player2 = new Player({name: 'Player 2', token: 'O'})
+    this.winner = ''
     this.spaces = [
       {name: 'q1', taken: false, claimedBy: ''},
       {name: 'q2', taken: false, claimedBy: ''},
@@ -13,6 +14,48 @@ class Game {
       {name: 'q8', taken: false, claimedBy: ''},
       {name: 'q9', taken: false, claimedBy: ''},
     ]
+  }
+  checkWinConditions(player) {
+    if (this.spaces[0].claimedBy === player.id &&
+      this.spaces[1].claimedBy === player.id &&
+      this.spaces[2].claimedBy === player.id) {
+        this.winner = player
+      }
+    if (this.spaces[3].claimedBy === player.id &&
+        this.spaces[4].claimedBy === player.id &&
+        this.spaces[5].claimedBy === player.id) {
+          this.winner = player
+      }
+    if (this.spaces[6].claimedBy === player.id &&
+      this.spaces[7].claimedBy === player.id &&
+      this.spaces[8].claimedBy === player.id) {
+        this.winner = player
+    }
+    if (this.spaces[0].claimedBy === player.id &&
+      this.spaces[3].claimedBy === player.id &&
+      this.spaces[6].claimedBy === player.id) {
+        this.winner = player
+      }
+    if (this.spaces[1].claimedBy === player.id &&
+      this.spaces[4].claimedBy === player.id &&
+      this.spaces[7].claimedBy === player.id) {
+        this.winner = player
+      }
+    if (this.spaces[2].claimedBy === player.id &&
+      this.spaces[5].claimedBy === player.id &&
+      this.spaces[8].claimedBy === player.id) {
+        this.winner = player
+      }
+    if (this.spaces[0].claimedBy === player.id &&
+      this.spaces[4].claimedBy === player.id &&
+      this.spaces[8].claimedBy === player.id) {
+          this.winner = player
+      }
+    if (this.spaces[2].claimedBy === player.id &&
+      this.spaces[4].claimedBy === player.id &&
+      this.spaces[6].claimedBy === player.id) {
+        this.winner = player
+      }
   }
   takeTurn(target, player) {
     for (var i = 0; i < this.spaces.length; i ++) {
@@ -26,8 +69,13 @@ class Game {
 
 
 /* ################# Pseudocoding ################
+go through spaces array - iterate? go through each one individually?
 
+check adjacent spaces
+  q1, q2, q3, || q4, q5, q6, || q7q8q9 || q1q4q7 || q2,q5,q8 ||
+  q3q6q9 || q1q5q9 || q7q5q3
 
+if 3 adjacent spaces in a row are claimed by the same player - that player wins
 
 
 
