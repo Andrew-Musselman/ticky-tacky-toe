@@ -3,17 +3,39 @@ class Game {
   var player2 = new Player({name: 'Player 2', token: 'O'})
   constructor() {
     this.players = [player1, player2]
-    this.spaces = {
-      q1: false,
-      q2: false,
-      q3: false,
-      q4: false,
-      q5: false,
-      q6: false,
-      q7: false,
-      q8: false,
-      q9: false,
+    this.spaces = [
+      {name: q1, taken: false, claimedBy: ''},
+      {name: q2, taken: false, claimedBy: ''},
+      {name: q3, taken: false, claimedBy: ''},
+      {name: q4, taken: false, claimedBy: ''},
+      {name: q5, taken: false, claimedBy: ''},
+      {name: q6, taken: false, claimedBy: ''},
+      {name: q7, taken: false, claimedBy: ''},
+      {name: q8, taken: false, claimedBy: ''},
+      {name: q9, taken: false, claimedBy: ''},
+    ]
+  }
+  takeTurn(target, player) {
+    for (var i = 0; i < this.spaces.length; i ++) {
+      if (this.spaces[i].name === target) {
+        this.spaces[i].taken = true;
+        this.spaces[i].claimedBy = `${player}`
+      }
     }
   }
-
 }
+
+
+/* ################# Pseudocoding ################
+
+
+
+
+
+
+
+
+
+
+
+*/
