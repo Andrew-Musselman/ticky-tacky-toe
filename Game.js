@@ -70,8 +70,10 @@ class Game {
     if (this.player1Turn) {
       this.player1Turn = false;
       this.takeTurn(target, this.player1);
+      this.checkWinConditions(this.player1)
     } else if (!this.player1Turn) {
       this.player1Turn = true;
+      this.takeTurn(target, this.player2);
       this.takeTurn(target, this.player2);
     }
   }
