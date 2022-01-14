@@ -3,6 +3,7 @@ class Game {
     this.player1 = new Player({name: 'Player 1', token: 'X'})
     this.player2 = new Player({name: 'Player 2', token: 'O'})
     this.winner = ''
+    this.player1Turn = true
     this.spaces = [
       {name: 'q1', taken: false, claimedBy: ''},
       {name: 'q2', taken: false, claimedBy: ''},
@@ -63,6 +64,15 @@ class Game {
         this.spaces[i].taken = true;
         this.spaces[i].claimedBy = `${player.id}`
       }
+    }
+  }
+  switchTurns(target) {
+    if (this.player1Turn) {
+      this.player1Turn = false;
+      this.takeTurn(target, this.player1);
+    } else if (!this.player1Turn) {
+      this.player1Turn = true;
+      this.takeTurn(target, this.player2);
     }
   }
 }
