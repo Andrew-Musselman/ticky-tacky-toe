@@ -74,9 +74,10 @@ class Game {
     } else if (!this.player1Turn) {
       this.player1Turn = true;
       this.takeTurn(target, this.player2);
-      this.takeTurn(target, this.player2);
+      this.checkWinConditions(this.player2);
     }
   }
+
 }
 
 
