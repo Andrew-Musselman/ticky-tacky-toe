@@ -9,4 +9,14 @@ window.addEventListener('load', createCurrentGame);
 // event handlers
 function createCurrentGame() {
   currentGame = new Game();
+  showPlayerTurn();
+}
+
+function showPlayerTurn() {
+  if (currentGame.player1Turn) {
+    playerTurn.innerText = `${currentGame.player1.token}'s Turn`
+  }
+  if (!currentGame.player1Turn) {
+    playerTurn.innerText = `${currentGame.player2.token}'s Turn`
+  }
 }
