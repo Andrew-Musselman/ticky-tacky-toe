@@ -17,8 +17,14 @@ gameBoard.addEventListener('click', handleTurn);
 // event handlers
 function createCurrentGame() {
   currentGame = new Game();
+  setTokens();
   showPlayerTurn();
   showPlayerData();
+}
+
+function setTokens() {
+  currentGame.player1.token = playerOneTokenChoice.value;
+  currentGame.player2.token = playerTwoTokenChoice.value;
 }
 
 function determineTurn() {
