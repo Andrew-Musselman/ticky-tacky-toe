@@ -40,7 +40,8 @@ function winGame() {
 
 function takeTurn() {
   for (var i = 0; i < cells.length; i++) {
-    if (event.target.classList.contains(currentGame.spaces[i].name)) {
+    if (event.target.classList.contains(currentGame.spaces[i].name) &&
+    !currentGame.spaces[i].taken) {
       currentGame.switchTurns(currentGame.spaces[i].name);
       cells[i].innerText = `${currentGame[player]['token']}`;
     }
