@@ -54,10 +54,10 @@ function showPlayerTurn() {
 }
 
 function showPlayerData() {
-  playerOneDisplay.innerText += `${currentGame.player1.token}`
-  playerTwoDisplay.innerText += `${currentGame.player2.token}`
-  playerOneWinsDisplay.innerText += `${currentGame.player1.wins}`
-  playerTwoWinsDisplay.innerText += `${currentGame.player2.wins}`
+  playerOneDisplay.innerText = `${currentGame.player1.token}`
+  playerTwoDisplay.innerText = `${currentGame.player2.token}`
+  playerOneWinsDisplay.innerText = `Wins: ${currentGame.player1.wins}`
+  playerTwoWinsDisplay.innerText = `Wins: ${currentGame.player2.wins}`
 }
 
 function winGame() {
@@ -85,6 +85,7 @@ function clearGame() {
   resetDOM();
   currentGame.resetGame();
   showPlayerTurn();
+  showPlayerData();
 }
 
 function resetDOM() {
