@@ -58,6 +58,16 @@ class Game {
         this.winner = player
       }
   }
+  // checkSpaces() {
+  // }
+  checkDraw() {
+    for (var i = 0; i < this.spaces.length; i++){
+      var valid = this.spaces[i].taken;
+    }
+    if (!this.winner && valid){
+      console.log('draw')
+    }
+  }
   takeTurn(target, player) {
     for (var i = 0; i < this.spaces.length; i ++) {
       if (this.spaces[i].name === target && !this.spaces[i].taken) {
@@ -71,10 +81,12 @@ class Game {
       this.player1Turn = false;
       this.takeTurn(target, this.player1);
       this.checkWinConditions(this.player1)
+      this.checkDraw();
     } else if (!this.player1Turn) {
       this.player1Turn = true;
       this.takeTurn(target, this.player2);
       this.checkWinConditions(this.player2);
+      this.checkDraw();
     }
   }
 
