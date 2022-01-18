@@ -3,6 +3,10 @@ var currentGame;
 var gameBoard = document.querySelector('.game-board');
 var playerTurn = document.querySelector('.player-turn');
 var cells = document.querySelectorAll('.cell');
+var playerOneDisplay = document.querySelector('.player-1');
+var playerTwoDisplay = document.querySelector('.player-2');
+var playerOneWinsDisplay = document.querySelector('.player-1-wins');
+var playerTwoWinsDisplay = document.querySelector('.player-2-wins');
 
 // event Listeners
 window.addEventListener('load', createCurrentGame);
