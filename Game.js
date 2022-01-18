@@ -59,8 +59,6 @@ class Game {
         this.winner = player
       }
   }
-  // checkSpaces() {
-  // }
   checkDraw() {
     for (var i = 0; i < this.spaces.length; i++){
       var valid = this.spaces[i].taken;
@@ -91,7 +89,25 @@ class Game {
       this.checkDraw();
     }
   }
-
+  resetGame() {
+    console.log('when')
+    if(this.winner || this.draw) {
+      this.winner = ''
+      this.draw = false
+      this.player1Turn = true
+      this.spaces = [
+        {name: 'q1', taken: false, claimedBy: ''},
+        {name: 'q2', taken: false, claimedBy: ''},
+        {name: 'q3', taken: false, claimedBy: ''},
+        {name: 'q4', taken: false, claimedBy: ''},
+        {name: 'q5', taken: false, claimedBy: ''},
+        {name: 'q6', taken: false, claimedBy: ''},
+        {name: 'q7', taken: false, claimedBy: ''},
+        {name: 'q8', taken: false, claimedBy: ''},
+        {name: 'q9', taken: false, claimedBy: ''},
+      ]
+    }
+  }
 }
 
 
