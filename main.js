@@ -39,6 +39,7 @@ function winGame() {
 }
 
 function takeTurn() {
+  determineTurn();
   for (var i = 0; i < cells.length; i++) {
     if (event.target.classList.contains(currentGame.spaces[i].name) &&
     !currentGame.spaces[i].taken) {
@@ -61,7 +62,6 @@ function resetDOM() {
 }
 
 function handleTurn(event) {
-  determineTurn();
   takeTurn();
   showPlayerTurn();
   winGame();
