@@ -31,8 +31,12 @@ function determineTurn() {
 function winGame() {
   if (currentGame.winner) {
     playerTurn.innerText = `${currentGame.winner.token} wins!`
+  } if (currentGame.draw) {
+    playerTurn.innerText = "It's a draw"
   }
 }
+
+
 
 function takeTurn() {
   for (var i = 0; i < cells.length; i++) {

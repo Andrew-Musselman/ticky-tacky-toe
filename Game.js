@@ -3,6 +3,7 @@ class Game {
     this.player1 = new Player({name: 'Player 1', token: 'X'})
     this.player2 = new Player({name: 'Player 2', token: 'O'})
     this.winner = ''
+    this.draw = false
     this.player1Turn = true
     this.spaces = [
       {name: 'q1', taken: false, claimedBy: ''},
@@ -66,6 +67,7 @@ class Game {
     }
     if (!this.winner && valid){
       console.log('draw')
+      this.draw = true;
     }
   }
   takeTurn(target, player) {
