@@ -16,11 +16,7 @@ gameBoard.addEventListener('click', handleTurn);
 function createCurrentGame() {
   currentGame = new Game();
   showPlayerTurn();
-}
-
-function showPlayerTurn() {
-  determineTurn();
-  playerTurn.innerText = currentGame[player]['token'] +"'s Turn";
+  showPlayerData();
 }
 
 function determineTurn() {
@@ -30,6 +26,18 @@ function determineTurn() {
     player = 'player2';
   }
   return player;
+}
+
+function showPlayerTurn() {
+  determineTurn();
+  playerTurn.innerText = currentGame[player]['token'] +"'s Turn";
+}
+
+function showPlayerData() {
+  playerOneDisplay.innerText = `${currentGame.player1.id}`
+  playerTwoDisplay.innerText = `${currentGame.player2.id}`
+  playerOneWinsDisplay.innerText = `${currentGame.player1.wins}`
+  playerTwoWinsDisplay.innerText = `${currentGame.player2.wins}`
 }
 
 function winGame() {
