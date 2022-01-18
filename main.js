@@ -7,6 +7,8 @@ var playerOneDisplay = document.querySelector('.player-1');
 var playerTwoDisplay = document.querySelector('.player-2');
 var playerOneWinsDisplay = document.querySelector('.player-1-wins');
 var playerTwoWinsDisplay = document.querySelector('.player-2-wins');
+var playerOneTokenChoice = document.querySelector('#player-1-token');
+var playerTwoTokenChoice = document.querySelector('#player-2-token');
 
 // event Listeners
 window.addEventListener('load', createCurrentGame);
