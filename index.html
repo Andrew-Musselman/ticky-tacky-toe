@@ -6,7 +6,7 @@
 <body>
   <header>
     <p class="player-1">Player 1 </p>
-    <form>
+    <form class="player-1-form">
       <label for="player-1-token">Chose a token</label>
       <select name="player-1-token" id="player-1-token">
         <option value="🐸">🐸</option>
@@ -18,6 +18,7 @@
     <p class="player-1-wins">Wins: </p>
   </header>
   <main>
+    <button class="start" id="start">Start Game</button>
     <h1 class="player-turn"></h1>
     <section class="game-board">
       <div class='cell q1'></div>
@@ -32,8 +33,8 @@
     </section>
   </main>
   <footer>
-    <p class="player-2">Player 1</p>
-    <form>
+    <p class="player-2">Player 2</p>
+    <form class='player-2-form'>
       <label for="player-2-token">Choose a token</label>
       <select name="player-2-token" id="player-2-token">
         <option value="🍓">🍓</option>
