@@ -5,26 +5,48 @@
 </head>
 <body>
   <header>
-    <p>Player 1</p>
+    <p class="player-1">Player 1 </p>
+    <form class="player-1-form">
+      <label for="player-1-token">Chose a token</label>
+      <select name="player-1-token" id="player-1-token">
+        <option value="🐸">🐸</option>
+        <option value="🌿">🌿</option>
+        <option value="🌵">🌵</option>
+        <option value="🍏">🍏</option>
+      </select>
+    </form>
+    <p class="player-1-wins">Wins: </p>
   </header>
   <main>
-    <h1></h1>
-    <section>
-      <div class='q1'></div>
-      <div class='q2'></div>
-      <div class='q3'></div>
-      <div class='q4'></div>
-      <div class='q5'></div>
-      <div class='q6'></div>
-      <div class='q7'></div>
-      <div class='q8'></div>
-      <div class='q9'></div>
+    <button class="start" id="start">Start Game</button>
+    <h1 class="player-turn"></h1>
+    <section class="game-board">
+      <div class='cell q1'></div>
+      <div class='cell q2'></div>
+      <div class='cell q3'></div>
+      <div class='cell q4'></div>
+      <div class='cell q5'></div>
+      <div class='cell q6'></div>
+      <div class='cell q7'></div>
+      <div class='cell q8'></div>
+      <div class='cell q9'></div>
     </section>
   </main>
   <footer>
-    <p>Player 2</p>
+    <p class="player-2">Player 2</p>
+    <form class='player-2-form'>
+      <label for="player-2-token">Choose a token</label>
+      <select name="player-2-token" id="player-2-token">
+        <option value="🍓">🍓</option>
+        <option value="🍄">🍄</option>
+        <option value="🍂">🍂</option>
+        <option value="🦀">🦀</option>
+      </select>
+    </form>
+    <p class="player-2-wins">Wins: </p>
   </footer>
   <script type="text/javascript" src="Game.js"></script>
   <script type="text/javascript" src="Player.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
