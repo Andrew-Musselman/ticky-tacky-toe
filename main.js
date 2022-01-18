@@ -31,12 +31,12 @@ function determineTurn() {
 function winGame() {
   if (currentGame.winner) {
     playerTurn.innerText = `${currentGame.winner.token} wins!`
+    setTimeout(clearGame, 3000);
   } if (currentGame.draw) {
     playerTurn.innerText = "It's a draw"
+    setTimeout(clearGame, 3000);
   }
 }
-
-
 
 function takeTurn() {
   for (var i = 0; i < cells.length; i++) {
@@ -44,6 +44,18 @@ function takeTurn() {
       currentGame.switchTurns(currentGame.spaces[i].name);
       cells[i].innerText = `${currentGame[player]['token']}`;
     }
+  }
+}
+
+function clearGame() {
+  resetDOM();
+  currentGame.resetGame();
+}
+
+function resetDOM() {
+  showPlayerTurn();
+  for (var i = 0; i < cells.length; i++) {
+    cells[i].innerText = '';
   }
 }
 
