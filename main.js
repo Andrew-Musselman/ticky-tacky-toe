@@ -31,10 +31,10 @@ function determineTurn() {
 function winGame() {
   if (currentGame.winner) {
     playerTurn.innerText = `${currentGame.winner.token} wins!`
-    setTimeout(clearGame, 3000);
+    setTimeout(clearGame, 2000);
   } if (currentGame.draw) {
     playerTurn.innerText = "It's a draw"
-    setTimeout(clearGame, 3000);
+    setTimeout(clearGame, 2000);
   }
 }
 
@@ -51,10 +51,10 @@ function takeTurn() {
 function clearGame() {
   resetDOM();
   currentGame.resetGame();
+  showPlayerTurn();
 }
 
 function resetDOM() {
-  showPlayerTurn();
   for (var i = 0; i < cells.length; i++) {
     cells[i].innerText = '';
   }
