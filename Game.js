@@ -22,41 +22,49 @@ class Game {
       this.spaces[1].claimedBy === player.id &&
       this.spaces[2].claimedBy === player.id) {
         this.winner = player
+        player.wins ++
       }
     if (this.spaces[3].claimedBy === player.id &&
         this.spaces[4].claimedBy === player.id &&
         this.spaces[5].claimedBy === player.id) {
           this.winner = player
+          player.wins ++
       }
     if (this.spaces[6].claimedBy === player.id &&
       this.spaces[7].claimedBy === player.id &&
       this.spaces[8].claimedBy === player.id) {
         this.winner = player
+        player.wins ++
     }
     if (this.spaces[0].claimedBy === player.id &&
       this.spaces[3].claimedBy === player.id &&
       this.spaces[6].claimedBy === player.id) {
         this.winner = player
+        player.wins ++
       }
     if (this.spaces[1].claimedBy === player.id &&
       this.spaces[4].claimedBy === player.id &&
       this.spaces[7].claimedBy === player.id) {
         this.winner = player
+        player.wins ++
       }
     if (this.spaces[2].claimedBy === player.id &&
       this.spaces[5].claimedBy === player.id &&
       this.spaces[8].claimedBy === player.id) {
         this.winner = player
+        player.wins ++
       }
     if (this.spaces[0].claimedBy === player.id &&
       this.spaces[4].claimedBy === player.id &&
       this.spaces[8].claimedBy === player.id) {
           this.winner = player
+          player.wins ++
       }
     if (this.spaces[2].claimedBy === player.id &&
       this.spaces[4].claimedBy === player.id &&
       this.spaces[6].claimedBy === player.id) {
         this.winner = player
+        player.wins ++
       }
   }
   checkDraw() {
