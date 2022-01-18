@@ -5,6 +5,7 @@ var playerTurn = document.querySelector('.player-turn');
 
 // event Listeners
 window.addEventListener('load', createCurrentGame);
+gameBoard.addEventListener('click', takeTurn);
 
 // event handlers
 function createCurrentGame() {
@@ -13,10 +14,29 @@ function createCurrentGame() {
 }
 
 function showPlayerTurn() {
-  if (currentGame.player1Turn) {
-    playerTurn.innerText = `${currentGame.player1.token}'s Turn`
+  determineTurn();
+  playerTurn.innerText = currentGame[player]['token'] +"'s Turn"
+}
+
+function determineTurn() {
+  if (currentGame.player1) {
+    player = 'player1'
+  } else {
+    player = 'player2'
   }
-  if (!currentGame.player1Turn) {
-    playerTurn.innerText = `${currentGame.player2.token}'s Turn`
+  return player;
+}
+
+function takeTurn(event) {
+  determineTurn();
+  console.log('hi')
+  console.log(event.target.classList)
+  console.log(currentGame.spaces[0].name)
+  // for (var i = 0; i < currentGame.spaces; i++) {
+    // console.log(currentGame.spaces[i].name)
+    if (event.target.classList.contains(currentGame.spaces[0].name)) {
+      event.target.innerText = `${currentGame[player]['token']}`
+      console.log('hello')
+    // }
   }
 }
