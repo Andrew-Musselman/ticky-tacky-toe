@@ -9,22 +9,34 @@ var playerOneWinsDisplay = document.querySelector('.player-1-wins');
 var playerTwoWinsDisplay = document.querySelector('.player-2-wins');
 var playerOneTokenChoice = document.querySelector('#player-1-token');
 var playerTwoTokenChoice = document.querySelector('#player-2-token');
+var startButton = document.querySelector('#start');
+var playerOneForm = document.querySelector(".player-1-form");
+var playerTwoForm = document.querySelector(".player-2-form")
+
 
 // event Listeners
-window.addEventListener('load', createCurrentGame);
+startButton.addEventListener('click', startGame);
 gameBoard.addEventListener('click', handleTurn);
 
+
 // event handlers
-function createCurrentGame() {
+function startGame() {
   currentGame = new Game();
   setTokens();
-  showPlayerTurn();
-  showPlayerData();
+  hide(startButton);
+  hide(playerOneForm);
+  hide(playerTwoForm);
+}
+
+function hide(element) {
+  element.classList.add('hidden');
 }
 
 function setTokens() {
   currentGame.player1.token = playerOneTokenChoice.value;
   currentGame.player2.token = playerTwoTokenChoice.value;
+  showPlayerTurn();
+  showPlayerData();
 }
 
 function determineTurn() {
