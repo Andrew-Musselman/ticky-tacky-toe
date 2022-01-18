@@ -2,10 +2,11 @@ var currentGame;
 //query Selectors
 var gameBoard = document.querySelector('.game-board');
 var playerTurn = document.querySelector('.player-turn');
+var cells = document.querySelectorAll('.cell');
 
 // event Listeners
 window.addEventListener('load', createCurrentGame);
-gameBoard.addEventListener('click', takeTurn);
+gameBoard.addEventListener('click', handleTurn);
 
 // event handlers
 function createCurrentGame() {
@@ -15,28 +16,36 @@ function createCurrentGame() {
 
 function showPlayerTurn() {
   determineTurn();
-  playerTurn.innerText = currentGame[player]['token'] +"'s Turn"
+  playerTurn.innerText = currentGame[player]['token'] +"'s Turn";
 }
 
 function determineTurn() {
-  if (currentGame.player1) {
-    player = 'player1'
-  } else {
-    player = 'player2'
+  if (currentGame.player1Turn) {
+    player = 'player1';
+  } if (!currentGame.player1Turn) {
+    player = 'player2';
   }
   return player;
 }
 
-function takeTurn(event) {
-  determineTurn();
-  console.log('hi')
-  console.log(event.target.classList)
-  console.log(currentGame.spaces[0].name)
-  // for (var i = 0; i < currentGame.spaces; i++) {
-    // console.log(currentGame.spaces[i].name)
-    if (event.target.classList.contains(currentGame.spaces[0].name)) {
-      event.target.innerText = `${currentGame[player]['token']}`
-      console.log('hello')
-    // }
+function winGame() {
+  if (currentGame.winner) {
+    playerTurn.innerText = `${currentGame.winner.token} wins!`
   }
+}
+
+function takeTurn() {
+  for (var i = 0; i < cells.length; i++) {
+    if (event.target.classList.contains(currentGame.spaces[i].name)) {
+      currentGame.switchTurns(currentGame.spaces[i].name);
+      cells[i].innerText = `${currentGame[player]['token']}`;
+    }
+  }
+}
+
+function handleTurn(event) {
+  determineTurn();
+  takeTurn();
+  showPlayerTurn();
+  winGame();
 }
