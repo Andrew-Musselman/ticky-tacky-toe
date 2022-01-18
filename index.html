@@ -5,8 +5,17 @@
 </head>
 <body>
   <header>
-    <p class="player-1"></p>
-    <p class="player-1-wins"></p>
+    <p class="player-1">Player 1 </p>
+    <form>
+      <label for="player-1-token">Chose a token</label>
+      <select name="player-1-token" id="player-1-token">
+        <option value="🐸">🐸</option>
+        <option value="🌿">🌿</option>
+        <option value="🌵">🌵</option>
+        <option value="🍏">🍏</option>
+      </select>
+    </form>
+    <p class="player-1-wins">Wins: </p>
   </header>
   <main>
     <h1 class="player-turn"></h1>
@@ -23,8 +32,17 @@
     </section>
   </main>
   <footer>
-    <p class="player-2"></p>
-    <p class="player-2-wins"></p>
+    <p class="player-2">Player 1</p>
+    <form>
+      <label for="player-2-token">Choose a token</label>
+      <select name="player-2-token" id="player-2-token">
+        <option value="🍓">🍓</option>
+        <option value="🍄">🍄</option>
+        <option value="🍂">🍂</option>
+        <option value="🦀">🦀</option>
+      </select>
+    </form>
+    <p class="player-2-wins">Wins: </p>
   </footer>
   <script type="text/javascript" src="Game.js"></script>
   <script type="text/javascript" src="Player.js"></script>
