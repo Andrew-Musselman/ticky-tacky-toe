@@ -1,5 +1,7 @@
+// Data Model
 var currentGame;
-//query Selectors
+
+//Query Selectors
 var gameBoard = document.querySelector('.game-board');
 var playerTurn = document.querySelector('.player-turn');
 var cells = document.querySelectorAll('.cell');
@@ -13,13 +15,11 @@ var startButton = document.querySelector('#start');
 var playerOneForm = document.querySelector(".player-1-form");
 var playerTwoForm = document.querySelector(".player-2-form")
 
-
-// event Listeners
+// Event Listeners
 startButton.addEventListener('click', startGame);
 gameBoard.addEventListener('click', handleTurn);
 
-
-// event handlers
+// Event Handlers
 function startGame() {
   currentGame = new Game();
   setTokens();
@@ -28,10 +28,13 @@ function startGame() {
   hide(playerTwoForm);
 }
 
-function hide(element) {
-  element.classList.add('hidden');
+function handleTurn(event) {
+  takeTurn();
+  showPlayerTurn();
+  winGame();
 }
 
+// DOM Functions
 function setTokens() {
   currentGame.player1.token = playerOneTokenChoice.value;
   currentGame.player2.token = playerTwoTokenChoice.value;
@@ -81,6 +84,12 @@ function takeTurn() {
   }
 }
 
+function resetDOM() {
+  for (var i = 0; i < cells.length; i++) {
+    cells[i].innerText = '';
+  }
+}
+
 function clearGame() {
   resetDOM();
   currentGame.resetGame();
@@ -88,14 +97,7 @@ function clearGame() {
   showPlayerData();
 }
 
-function resetDOM() {
-  for (var i = 0; i < cells.length; i++) {
-    cells[i].innerText = '';
-  }
-}
-
-function handleTurn(event) {
-  takeTurn();
-  showPlayerTurn();
-  winGame();
+// Element Editing Functions
+function hide(element) {
+  element.classList.add('hidden');
 }
