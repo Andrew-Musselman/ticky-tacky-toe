@@ -68,14 +68,13 @@ class Game {
       }
   }
   checkDraw() {
-    for (var i = 0; i < this.spaces.length; i++){
-      var valid = this.spaces[i].taken;
-    }
-    if (!this.winner && valid){
-      console.log('draw')
+    var valid = this.spaces.every((e) => {
+      return e.taken;
+      })
+    if(valid && !this.winner) {
       this.draw = true;
+      }
     }
-  }
   takeTurn(target, player) {
     for (var i = 0; i < this.spaces.length; i ++) {
       if (this.spaces[i].name === target && !this.spaces[i].taken) {
@@ -98,7 +97,6 @@ class Game {
     }
   }
   resetGame() {
-    console.log('when')
     if(this.winner || this.draw) {
       this.winner = ''
       this.draw = false
