@@ -1,5 +1,8 @@
 ## Ticky-Tacky-Toe
 ---
+### Behind the Scenes
+
+This game was built by [Andrew Musselman](https://github.com/Andrew-Musselman). The basic structure was written in HTML, styled in CSS, and all functionality was written in JavaScript. The JavaScript relies on a strict separation of the data model from DOM manipulation - meaning every user interaction updates the data model, and then the DOM is updated from the data model.
 
 ### Starting the Game
 
@@ -21,7 +24,3 @@ After the game has started players will see that the *Start Game* button and the
 To win the game a player needs to claim three spaces in a row. If there are no spaces left and neither player has claimed three in a row this results in a draw. The game ends after someone wins or it results in a draw. Once the game is over the game board resets itself for a new game, and if there is a winner that is updated in the player data section on either side of the game board.
 
 ![End Game](https://user-images.githubusercontent.com/92277979/150052565-29b9e194-b32f-4c31-8ac0-75e6dec444c7.gif)
-
-### Behind the Scenes
-
-This game was built by [Andrew Musselman](https://github.com/Andrew-Musselman). The basic structure was written in HTML, styled in CSS, and all functionality was written in JavaScript. The JavaScript relies on a strict separation of the data model from DOM manipulation - meaning every user interaction updates the data model, and then the DOM is updated from the data model. 
