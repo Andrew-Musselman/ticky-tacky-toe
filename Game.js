@@ -68,8 +68,8 @@ class Game {
       }
   }
   checkDraw() {
-    var valid = this.spaces.every((e) => {
-      return e.taken;
+    var valid = this.spaces.every((space) => {
+      return space.taken;
       })
     if(valid && !this.winner) {
       this.draw = true;
