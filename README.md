@@ -9,6 +9,8 @@ This game was built by [Andrew Musselman](https://github.com/Andrew-Musselman). 
 
 To play the game clone this repo onto your local device, cd into the the new directory and run open index.html in the command line of your terminal, this will open the game in your browser.
 
+<img width="379" alt="Screen Shot 2022-01-19 at 9 33 14 PM" src="https://user-images.githubusercontent.com/92277979/150274060-2232467d-fdab-4573-90e8-021be7a61492.png">
+
 
 ### Starting the Game
 
